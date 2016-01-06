@@ -22,12 +22,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="concurrency" />
+        <module name="design-patterns" />
         <module name="jmx" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="jmx" target="1.5" />
-      <module name="projects" target="1.5" />
+      <module name="concurrency" target="1.8" />
+      <module name="design-patterns" target="1.8" />
+      <module name="jmx" target="1.8" />
+      <module name="projects" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
