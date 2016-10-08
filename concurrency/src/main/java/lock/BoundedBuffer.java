@@ -23,6 +23,7 @@ class BoundedBuffer {
                 notFull.await();
                 System.out.println(Thread.currentThread().getName()+" has crossed await on put");
             }
+            System.out.println(Thread.currentThread().getName() + " put " + x);
             items[putptr] = x;
             if (++putptr == items.length) putptr = 0;
             ++count;
@@ -39,8 +40,10 @@ class BoundedBuffer {
                 System.out.println(Thread.currentThread().getName()+" is await on take");
                 notEmpty.await();
                 System.out.println(Thread.currentThread().getName()+" has crossed await on take");
+                Thread.sleep(10000l);
             }
             Object x = items[takeptr];
+            System.out.println(Thread.currentThread().getName() + " took " + x);
             if (++takeptr == items.length) takeptr = 0;
             --count;
             notFull.signal();

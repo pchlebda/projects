@@ -40,7 +40,6 @@ public class Main {
             while (true) {
                 try {
                     Object obj = new String(Thread.currentThread().getName());
-                    System.out.println(Thread.currentThread().getName() + " put " + obj);
                     boundedBuffer.put(obj);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -63,7 +62,6 @@ public class Main {
                 try {
                     Thread.sleep(5000);
                     Object obj = boundedBuffer.take();
-                    System.out.println(Thread.currentThread().getName() + " took " + obj);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
